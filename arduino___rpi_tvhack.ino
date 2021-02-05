@@ -24,7 +24,7 @@ void loop() {
         irrecv.resume();
   }
    if (Serial.available() > 0) { //detect the raspberry pi serial code 
-    data_need_tosend = Serial.read(); // recive and read the data from raspberry pi
+    data_need_tosend = Serial.read(); // recive and read the data from raspberry pi, still need some data parsing and some debuging
     irsend.sendNEC(data_need_tosend, 32); // proses penyaerangan nya entar di tambahi kode hex nya lewat variabel 
   }
     // Add a small delay before repeating
