@@ -8,5 +8,5 @@ while True:
         data_data = data
     if ser.in_waiting > 0:
         line = ser.readline().decode('utf-8').rstrip()
-        data_data.write(bytes(line))
+        data_data.write(line)
         print(line)
