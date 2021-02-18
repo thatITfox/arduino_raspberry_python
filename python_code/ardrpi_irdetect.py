@@ -8,6 +8,5 @@ while True:
         data_data = data
     if ser.in_waiting > 0:
         line = ser.readline().decode('utf-8').rstrip()
-        # data_data.write(line) <= this was suposed to write 
-        # the serial code to the txt file, but it's not working
+        data_data.write(line)
         print(line)
