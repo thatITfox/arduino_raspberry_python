@@ -5,8 +5,7 @@ if __name__ == '__main__':
     ser.flush()
 while True:
     with open('serial_save.txt', 'w') as data:
-        data_data = data
     if ser.in_waiting > 0:
         line = ser.readline().decode('utf-8').rstrip()
-        data_data.write(line)
+        data.write(line)
         print(line)
