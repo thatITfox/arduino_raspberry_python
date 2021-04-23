@@ -3,9 +3,12 @@ import serial
 if __name__ == '__main__':
     ser = serial.Serial('com3', 9600, timeout=1)
     ser.flush()
-while True:
-    with open('serial_save.txt', 'w') as data:
-        if ser.in_waiting > 0:
-            line = ser.readline().decode('utf-8').rstrip()
-            data.write(line)
-            print(line)
+read = True
+print("test is now on!!")
+jumlah_deteksi = int(input("input how many remote detection u want:"))
+while read:
+    with open('data_dan_info.txt', 'a') as data:
+        for line in range(jumlah_deteksi):
+            if ser.in_waiting < 0:
+                line = ser.readline().decode('utf-8').rstrip()
+            line += 1
