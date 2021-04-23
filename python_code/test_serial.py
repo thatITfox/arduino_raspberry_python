@@ -7,8 +7,7 @@ read = True
 print("test is now on!!")
 jumlah_deteksi = int(input("input how many remote detection u want:"))
 while read:
-    with open('data_dan_info.txt', 'a') as data:
-        for line in range(jumlah_deteksi):
-            if ser.in_waiting < 0:
-                line = ser.readline().decode('utf-8').rstrip()
-            line += 1
+    for line in range(jumlah_deteksi):
+        if ser.in_waiting < 0:
+            line = ser.readline().decode('utf-8').rstrip()
+            print(line)
