@@ -1,7 +1,12 @@
 import serial
 attack = True
 if __name__ == '__main__':
-    ser = serial.Serial('com5', 9600, timeout=1)
+    try:
+        # for raspberry pi
+        ser = serial.Serial('/dev/ttyS0')
+    except:
+        # for a satndard desktop or laptop, usualy for testing
+        ser = serial.Serial('com5', 9600, timeout=1)
     ser.flush()
 
 while attack:
