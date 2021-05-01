@@ -14,7 +14,9 @@ while attack:
     send_yn = input("do you wanna attack:")
     if send_yn == "Y":
         attack_now = input("send the serial hex code to attack:")
-        ser.write(bytes(attack_now, 'utf-8'))  # under testing and
+        attack_now = int(attack_now, base=16)  # make the hex code string to actual hex
+        print(attack_now)
+        ser.write(attack_now)  # under testing and prototyping
         time.sleep(0.5)
         make_sure = ser.read()
         print(make_sure)
